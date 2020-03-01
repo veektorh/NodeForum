@@ -1,10 +1,11 @@
 var express = require('express');
 var app = express();
 var setup = require('./utitlities/setup');
-
+const models = require('./models/index')
 setup.initialize(app);
 
 app.get('/', (req,res)=>{
+    models.User.findAll().then(a => console.log(a)).catch(e => console.log(e))
     res.json({Hello : "world"})
 })
 
