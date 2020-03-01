@@ -1,6 +1,5 @@
 'use strict';
-const User  = require('../models/User')
-const Community  = require('../models/community')
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Posts', {
@@ -18,20 +17,20 @@ module.exports = {
       body : Sequelize.TEXT,
       createdBy: {
         type: Sequelize.INTEGER,
-        // references: {      
-        //   model: User,
-        //   key: 'id',
-        //   deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-        // }
+        references: {      
+          model: "Users",
+          key: 'id',
+          deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        }
       },
       upvotes : Sequelize.INTEGER,
       CommunityId: {
         type: Sequelize.INTEGER,
-        // references: {      
-        //   model: Community,
-        //   key: 'id',
-        //   deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-        // }
+        references: {      
+          model: "Communities",
+          key: 'id',
+          deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        }
       },
       createdAt: {
         allowNull: false,

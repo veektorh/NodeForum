@@ -1,5 +1,4 @@
 'use strict';
-const User  = require('../models/User')
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Communities', {
@@ -17,11 +16,11 @@ module.exports = {
       },
       createdBy: {
         type: Sequelize.INTEGER,
-        // references: {      
-        //   model: User,
-        //   key: 'id',
-        //   deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-        // }
+        references: {      
+          model: "Users",
+          key: 'id',
+          deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        }
       },
       createdAt: {
         allowNull: false,

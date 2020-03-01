@@ -1,12 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Community = sequelize.define('Community', {
+  const Communities = sequelize.define('Communities', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     createdBy: DataTypes.INTEGER
   }, {});
-  Community.associate = function(models) {
+  Communities.associate = function(models) {
     // associations can be defined here
   };
-  return Community;
+  return Communities;
 };

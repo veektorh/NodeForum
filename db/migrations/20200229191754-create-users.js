@@ -9,11 +9,9 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       username: Sequelize.STRING,
-        password : Sequelize.TEXT,
-        email : Sequelize.STRING,
-        description: Sequelize.TEXT,
-        image : Sequelize.TEXT,
-        fname : Sequelize.TEXT,
+      password: Sequelize.TEXT,
+      email: Sequelize.STRING,
+      image: Sequelize.TEXT,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
