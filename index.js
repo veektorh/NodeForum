@@ -5,7 +5,7 @@ const models = require('./db/models/index')
 setup.initialize(app);
 
 app.get('/', (req,res)=>{
-    models.Users.findAll().then(a => console.log(a)).catch(e => console.log(e))
+    //models.Users.findAll().then(a => console.log(a)).catch(e => console.log(e))
     res.json({Hello : "world"})
 })
 
