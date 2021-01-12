@@ -1,6 +1,10 @@
-
 node {
     checkout scm
-    def customImage = docker.build("my-image:${env.BUILD_ID}")
-    customImage.push()
+
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+
+       def customImage docker.build("veektorh/nodeforum")
+
+       customImage.push()
+    }
 }
